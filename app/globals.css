@@ -1,0 +1,225 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 8px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 8px;
+}
+
+body {
+  position: relative;
+}
+
+.sheet-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(to right, #322f35 1px, transparent 1px), linear-gradient(to bottom, #322f35 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.7;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+.container {
+  @apply mx-auto px-4 xs:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16 max-w-[1400px];
+}
+
+h1 {
+  @apply text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl !leading-[105%] text-primary-dark font-raleway;
+}
+
+h2 {
+  @apply text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold leading-[125%] text-primary-dark font-raleway;
+}
+
+h3 {
+  @apply md:text-2xl text-xl+ font-semibold md:leading-[115%] text-primary-dark font-raleway;
+}
+
+h4 {
+  @apply text-lg md:text-2xl font-semibold text-primary-dark font-raleway;
+}
+
+h5 {
+  @apply text-xl font-semibold text-primary-dark font-raleway;
+}
+
+h6 {
+  @apply text-lg font-semibold text-primary-dark font-raleway;
+}
+
+p {
+  @apply text-sm sm:text-sm md:text-base text-text font-normal leading-relaxed sm:leading-relaxed font-roboto;
+}
+
+div,
+span,
+li,
+ul,
+a,
+button,
+input {
+  @apply font-roboto;
+}
+
+.sheetContent {
+  @apply !ring-0 !outline-none w-full;
+}
+
+.sheetContent > button {
+  display: none;
+}
+
+.input {
+  @apply border-none !outline-none bg-[#F5F5F7] focus:ring-1 focus:ring-primary focus-visible:outline-none rounded-lg block px-6 py-3.5 w-full transition-all duration-300 placeholder:text-text placeholder:text-base placeholder:font-normal;
+}
+
+.textarea {
+  @apply h-auto;
+}
+
+.input-label {
+  @apply text-black mb-1 inline-block font-semibold text-base;
+}
+
+.input-error-message {
+  @apply mt-2 text-red-500 text-sm;
+}
+
+/* LightBox Start */
+
+.lightbox-wrapper {
+  transition: none !important;
+  -o-transition: none !important;
+  -moz-transition: none !important;
+  -webkit-transition: none !important;
+}
+
+.lightbox-wrapper .react-viewer-mask {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+.lightbox-wrapper img {
+  border-radius: 5px;
+}
+
+.lightbox-wrapper .react-viewer-footer {
+  margin: 0;
+}
+
+.lightbox-wrapper .react-viewer-attribute {
+  display: none;
+}
+
+.lightbox-wrapper .react-viewer-footer .react-viewer-toolbar {
+  /* background-color: rgba(0, 0, 0, 0.8); */
+  padding: 20px 0;
+  height: 60px;
+  margin: 0px !important;
+}
+
+/* LightBox end */
+
+.parallax-background-container {
+  clip-path: inset(0 0 0 0);
+}
+
+.padding-y {
+  @apply py-10 sm:py-16 lg:py-[6rem];
+}
+
+.padding-t {
+  @apply pt-10 sm:pt-16 lg:pt-[6rem];
+}
+
+.padding-b {
+  @apply pb-10 sm:pb-16 lg:pb-[6rem];
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  @apply text-white font-bold text-xl bg-white/30 py-2 px-4 rounded-md hover:bg-primary transition-all duration-300 group-hover:opacity-100 opacity-0;
+}
+
+.swiper-button-prev {
+  @apply left-5;
+}
+
+.swiper-button-next {
+  @apply right-5;
+}
+
+.swiper-slide {
+  height: auto;
+}
+
+.select-arrow {
+  background-image:
+    linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position:
+    calc(100% - 20px) calc(1em + 6px),
+    calc(100% - 15px) calc(1em + 6px),
+    calc(100% - 2.5em) 0.7em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+  background-repeat: no-repeat;
+}
+
+.select-arrow {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 2px;
+  text-overflow: "";
+}
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+}
+
+.service-card-mask {
+  -webkit-mask-image: url(/images/services/mask.png);
+  mask-image: url(/images/services/mask.png);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: cover;
+}
+
